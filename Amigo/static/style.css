@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+nav{
+    background: rgb(1, 154, 249);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vh 2vw;
+}
+
+.nav-title{
+    font-size: 3rem;
+    font-weight: bolder;
+}
+.nav-links ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-links ul li{
+    list-style: none;
+    margin-left: 2vw;
+}
+.nav-links ul li a{
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.791);
+}
+.nav-auth button{
+    padding: 2vh 2vw;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all .3s;
+}
+.nav-auth .login{
+    background: rgb(0, 255, 0);
+}
+.nav-auth .login:hover{
+    background: transparent;
+    border: 1px solid rgb(0, 255, 0);
+}
+.nav-auth .signup{
+    background: black;
+    color: white;
+}
+.nav-auth .signup:hover{
+    background: transparent;
+    color: black;
+}
+main{
+    padding: 2vh 2vw;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+.card{
+    width: 20vw;
+    height: auto;
+    border: 2px solid black;
+}
+.card-img{
+    width: 19vw;
+    height: 30vh;
+}
+.card-img img{
+    width: 100%;
+    height: 100%;
+}
+.card-details{
+    width: 100%;
+    max-height: 10vh;
+    overflow: hidden;
+}
+.buy-btn{
+    width: 100%;
+}

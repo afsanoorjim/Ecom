@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amigo Shop</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <nav>
+        <div class="nav-title">Amigo</div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="nav-auth">
+            <button class="login">Login</button>
+            <button class="signup">Signup</button>
+        </div>
+
+    </nav>
+    <main>
+        {% for p in products %}
+        <div class="card">
+            <div class="card-img"><img src="{{p.product_image.url}}" alt="image"></div>
+            <div class="card-name">{{ p.product_name }}</div>
+            <div class="card-details">{{ p.product_overview }}</div>
+            <button type="button" class="buy-btn">{{p.product_price}}</button>
+        </div>
+        {% endfor %}
+    </main>
+</body>
+</html>
