@@ -43,7 +43,14 @@
             <div class="signup">
                 <form action="#">
                     {% csrf_token %}
-                    {{ form.as_table}}    
+                    <label for="username">Username</label>
+                    <input type="text" name="username">
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email">
+                    <label for="password1">Password</label>
+                    <input type="password" name="password1>
+                    <label for="password2">Confirm Password</label>
+                    <input type="password" name="password2">   
                     <button type="submit">Submit</button>
                 </form>
             </div>

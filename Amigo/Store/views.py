@@ -1,24 +1,21 @@
 from django.shortcuts import render
 from .models import *
-from .form import RegisterUser
 from django.contrib import messages
-
+from django.contrib.auth.models import User
 
 
 def landing(request):
     products = Product.objects.all()
-    if request.POST == 'POST':
-        form = RegisterUser(request.POST)
-        if form.is_valid:
-            form.save()
-            messages.success('User Created')
-            return render(request, 'index.html', context)
-    else:
-        form = RegisterUser()
-
-
     context = {
         'products': products, 
-        'form':form,
     }
+    if request.method == 'POST':
+        username = request.POST['username']
+        email = request.POST['email']
+        password1 = request.POST['password1']
+        password2 = request.POST['password2']
+        if password1 == password2:
+            User.objects.create_user(username=username, email=email, password=password1)
+            messages.success('User Created SuccessFully')
+            return render(request, 'index.html', context)
     return render(request, 'index.html', context)
