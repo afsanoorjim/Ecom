@@ -67,6 +67,7 @@ main{
 }
 .card{
     width: 20vw;
+    position:relative;
     height: auto;
     border: 2px solid black;
     display: flex;
