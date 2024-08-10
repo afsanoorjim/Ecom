@@ -57,7 +57,7 @@ nav{
     background: transparent;
     color: black;
 }
-main{
+section.products{
     padding: 2vh 2vw;
     display: flex;
     flex-wrap: wrap;
@@ -91,3 +91,4 @@ main{
 .buy-btn{
     width: 100%;
 }
+

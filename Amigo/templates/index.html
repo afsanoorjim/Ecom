@@ -25,14 +25,26 @@
 
     </nav>
     <main>
-        {% for p in products %}
-        <div class="card">
-            <div class="card-img"><img src="{{p.product_image.url}}" alt="image"></div>
-            <div class="card-name">{{ p.product_name }}</div>
-            <div class="card-details">{{ p.product_overview }}</div>
-            <button type="button" class="buy-btn">{{p.product_price}}</button>
-        </div>
-        {% endfor %}
+        <section class="products">
+            {% for p in products %}
+                <div class="card">
+                    <div class="card-img"><img src="{{p.product_image.url}}" alt="image"></div>
+                    <div class="card-name">{{ p.product_name }}</div>
+                    <div class="card-details">{{ p.product_overview }}</div>
+                    <button type="button" class="buy-btn">{{p.product_price}}</button>
+                </div>
+            {% endfor %}
+        </section>
+
+        <section class="auth">
+            <div class="signup">
+                <form action="#">
+                    {% csrf_token %}
+                    {{ form.as_table}}    
+                </form>
+            </div>
+        </section>
+
     </main>
 </body>
 </html>
