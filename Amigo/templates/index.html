@@ -37,10 +37,14 @@
         </section>
 
         <section class="auth">
+            {% for m in messages %}
+            {{m}}
+            {% endfor %}
             <div class="signup">
                 <form action="#">
                     {% csrf_token %}
                     {{ form.as_table}}    
+                    <button type="submit">Submit</button>
                 </form>
             </div>
         </section>
